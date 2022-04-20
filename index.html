@@ -11,27 +11,32 @@
 		<div class="master-container w-100">
 			<div class="calculator-container w-100">
 				<div class="display-container w-100">
-					<p class="top-display"></p>
-					<input class="display w-100" type="text" />
+					<p id="top-display"></p>
+					<input id="display" onkeypress="return onlyNum(event)" class="display w-100" type="text" />
 				</div>
 				<div class="buttons-container w-100">
-					<button>1</button>
-					<button>2</button>
-					<button>3</button>
-					<button>4</button>
-					<button>5</button>
-					<button>6</button>
-					<button>7</button>
-					<button>8</button>
-					<button>9</button>
-					<button>0</button>
-					<button>+</button>
-					<button>-</button>
-					<button>*</button>
-					<button>/</button>
-					<button>Exp</button>
+					<button class="calc-btn calc-num-btn">1</button>
+					<button class="calc-btn calc-num-btn">2</button>
+					<button class="calc-btn calc-num-btn">3</button>
+					<button class="calc-btn calc-num-btn">4</button>
+					<button class="calc-btn calc-num-btn">5</button>
+					<button class="calc-btn calc-num-btn">6</button>
+					<button class="calc-btn calc-num-btn">7</button>
+					<button class="calc-btn calc-num-btn">8</button>
+					<button class="calc-btn calc-num-btn">9</button>
+					<button class="calc-btn calc-num-btn">0</button>
+					<button id="del" class="calc-btn">del</button>
+					<button class="calc-btn calc-operator-btn">+</button>
+					<button class="calc-btn calc-operator-btn">-</button>
+					<button class="calc-btn calc-operator-btn">*</button>
+					<button class="calc-btn calc-operator-btn">/</button>
+					<button class="calc-btn calc-operator-btn">Exp</button>
+					<button class="calc-btn calc-operator-btn">%</button>
+					<button id="result-btn" class="calc-btn">=</button>
 				</div>
 			</div>
 		</div>
+
+		<script src="scripts/script.js"></script>
 	</body>
 </html>

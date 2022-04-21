@@ -12,7 +12,8 @@ body {
 	width: 100%;
 }
 .master-container {
-	padding-top: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 .calculator-container {
 	max-width: 400px;
@@ -47,6 +48,13 @@ body {
 	border: none;
 	background-color: rgba(0, 238, 159, 0.5);
 	font-size: 20px;
-	padding: 20px;
+	padding: 10px;
 	cursor: pointer;
+}
+.buttons-container button:hover {
+	background-color: lightgrey;;
+}
+.calc-btn-lg {
+	grid-row-start: 5;
+	grid-row-end: 7;
 }

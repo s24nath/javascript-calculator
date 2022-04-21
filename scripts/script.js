@@ -46,6 +46,8 @@ function onlyNum(e) {
     let getKey = e.key;
     if(!isNaN(Number(getKey)) || (getKey === '.' && !String(display.value).includes('.'))) {
         clearDisplay(autoClearDisplay);
+        chainOperation = true; 
+        operationWithResult = false;
         return true;
     } else {
         return false;

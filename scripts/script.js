@@ -9,15 +9,14 @@ const allClear = document.getElementById('all-clear');
 let operand1;
 let operand2;
 let result;
-let lastOperation;
 let operator = '';
-let autoClearDisplay = false;
+let autoClearDisplay = true;
 let chainOperation = false;
 let operationWithResult = false;
 
 // Display 0 if the input is empty
 function displayZeroIfEmptyField() {
-    display.value = display.value || 0;
+    display.value = 0;
 }
 
 // Clear display
@@ -56,6 +55,7 @@ function onlyNum(e) {
 
 // Restriction multiple double if clicked from screen buttons
 function restrictMultiDot() {
+    clearDisplay(autoClearDisplay);
     display.value += !String(display.value).includes('.') ? '.' : '';
 }
 
@@ -138,21 +138,24 @@ resultBtn.addEventListener('click', function () {
 
 // Delete Last Character
 deleteBtn.addEventListener('click', function () {
-    display.value = String(display.value).slice(0,-1);
+    if(String(display.value).length !== 1) {
+        display.value = String(display.value).slice(0,-1);
+    } else {
+        display.value = '0';
+        autoClearDisplay = true;
+    }
     // displayZeroIfEmptyField();
 });
 
 // All clear 
 allClear.addEventListener('click', function() {
-    // displayZeroIfEmptyField();
-    display.value = '';
+    display.value = '0';
     topDisplay.textContent = '';
     operator = '';
-    autoClearDisplay = true;
     operationWithResult = false;
+    autoClearDisplay = true;
 });
 
 displayZeroIfEmptyField();
-assigningFirstOperand();
 selectOperator();
 displayNum();       
